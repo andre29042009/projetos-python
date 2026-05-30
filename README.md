@@ -1,6 +1,3 @@
-
-
-
 # Projetos Python
 
 Neste repositório estão os projetos em Python que desenvolvi durante meus estudos.
