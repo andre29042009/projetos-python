@@ -1,41 +1,47 @@
 import logo
 
 print(logo.logo)
+again = ""
+def adicao(n1, n2, conta):
+    conta += n1 + n2
+    return conta
 
+def subtracao(n1, n2, conta):
+    conta += n1 - n2
+    return conta
 
-def calculadora():
-    again = ""
+def multiplicacao(n1, n2, conta):
+    conta += n1 * n2
+    return conta
+
+def divisao(n1, n2, conta):
+    conta += n1 / n2
+    return conta
+
+while True:
     calculo = 0
-    while  True:
-        firstNumber = int(input("Qual o primeiro número? \n"))
-        secondNumber = int(input("Qual o segundo número? \n"))
-        while True:
-            operation = input("Qual a operação? \n + \n - \n * \n /\n")
-            if operation not in ["+", "-", "*", "/"]:
-                continue
-            else:
-                break
-        if operation == "+":
-            calculo = firstNumber + secondNumber
-        elif operation == "-":
-            calculo = firstNumber - secondNumber
-        elif operation == "*":
-            calculo = firstNumber * secondNumber
-        elif operation == "/":
-            calculo = firstNumber / secondNumber
-        
-        print(f"O resultado é {calculo}")
-        while again != "Y" or again != "N":
-            again = input("Deseja fazer outro calculo ? [Y/N]\n").upper()
+    number1 = int(input("Digite o primeiro número:\n"))
+    operacao = input("Digite a operacao:\n")
+    number2 = int(input("Digite o segundo número:\n"))
 
-            if again == "Y" or again == "N":
-                break
-            else:
-                continue
+    if operacao == "+":
+        calculo = adicao(number1, number2, calculo)
+    elif operacao == "-":
+        calculo = subtracao(number1, number2, calculo)
+    elif operacao == "*":
+        calculo = multiplicacao(number1, number2, calculo)
+    elif operacao == "/":
+        calculo = divisao(number1, number2, calculo)
+    print(f"O resultado é {calculo}")
+    while True:
+        again = input("Deseja continuar? [Y/N]").upper()
         if again == "Y":
-            continue
-        else:
             break
-calculadora()
-
-
+        elif again != "N":
+            continue
+        else: 
+            break
+    if again == "Y":
+        continue
+    else:
+        break
