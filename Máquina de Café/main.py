@@ -73,7 +73,7 @@ while on:
                 recurso = input("Deseja adicionar qual recurso?\n 'agua' para água\n 'cafe' para café\n 'leite' para leite\n").lower()
             for z in resources:
                 if z == recurso:
-                    while quantRecurso < 1 or quantRecurso > 1000:
+                    while quantRecurso < 1 or quantRecurso >= 1000:
                         try:
                             quantRecurso = int(input("Valor que deseja adicionar : 1-999(ml)\n"))
                         except ValueError:
